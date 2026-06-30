@@ -32,11 +32,12 @@ android {
         applicationId = "com.samra.downloader"
         minSdk = 26
         targetSdk = 35
-        versionCode = 3
-        versionName = "1.2"
+        versionCode = 4
+        versionName = "1.3"
 
         ndk {
             // This device is arm64; keep the APK lean by shipping one ABI.
+            // (Add "x86_64" temporarily if you need to run it on an x86 emulator.)
             abiFilters += listOf("arm64-v8a")
         }
     }

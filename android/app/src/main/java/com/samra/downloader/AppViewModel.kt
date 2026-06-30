@@ -506,6 +506,13 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
     // toast
     var toast by mutableStateOf<String?>(null)
 
+    // Persisted resume positions + bookmarks. Declared BEFORE init {} because
+    // init calls loadPrefs() which fills these — Kotlin initializes properties in
+    // declaration order, so they must exist before the init block runs.
+    val audioPos = androidx.compose.runtime.mutableStateMapOf<String, Int>()
+    val audioBookmarks = androidx.compose.runtime.mutableStateMapOf<String, List<Int>>()
+    val readerPos = androidx.compose.runtime.mutableStateMapOf<String, Int>()
+
     init {
         loadPrefs()
         refreshLibrary()
@@ -601,8 +608,7 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
     fun removeBookmark(sec: Int) { pBookmarks.remove(sec); persistAudioBookmarks() }
 
     // --- persisted audio resume position + per-book audio bookmarks ---
-    // Last playback position (seconds) per book, restored when the player opens.
-    val audioPos = androidx.compose.runtime.mutableStateMapOf<String, Int>()
+    // (audioPos / audioBookmarks / readerPos are declared above, before init {})
     fun audioPosOf(key: String?): Int = key?.let { audioPos[it] } ?: 0
     fun saveAudioPos(key: String?, sec: Int) {
         if (key == null || audioPos[key] == sec) return
@@ -623,7 +629,6 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
 
     // Player (time) bookmarks per book — keeps [pBookmarks] (the live list for the
     // open book) in sync with this persisted map.
-    val audioBookmarks = androidx.compose.runtime.mutableStateMapOf<String, List<Int>>()
     private fun persistAudioBookmarks() {
         // Prefer the OPEN book (the one pBookmarks was loaded for in openPlayer).
         // PlaybackController.bookKey lags during the async open, so using it first
@@ -648,7 +653,6 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     // --- persisted reader resume position (EPUB chapter / PDF page) per book ---
-    val readerPos = androidx.compose.runtime.mutableStateMapOf<String, Int>()
     fun saveReaderPos(key: String?, unit: Int) {
         if (key == null || readerPos[key] == unit) return
         readerPos[key] = unit
