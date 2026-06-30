@@ -1,0 +1,7 @@
+[red]ERROR: Missing data from source[/red]
+
+Samra is missing data from the source. This usually happens when you try to
+download a book you don't have access to (not signed in, or your account
+doesn't have the right permissions), or the source changed its format.
+
+Make sure you're signed in and own the book, then try again.

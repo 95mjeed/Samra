@@ -1,0 +1,4 @@
+[red]ERROR: No files found in audiobook[/red]
+
+Samra couldn't find any audio files for this book. Make sure you're signed in
+and that the book is available in your account, then try again.

@@ -1,0 +1,12 @@
+[BUG]: invalid non-printable character U+FEFF (<frozen hello>, line 1)
+
+## Command Line
+C:\Users\mjeed1\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyarmor\cli\__main__.py gen --platform android.aarch64 -O C:\Users\mjeed1\AppData\Local\Temp\claude\c--Users-mjeed1-Desktop-WorkSpace\ad664777-f601-4a95-8115-ab743da207fa\scratchpad\pa_test\out C:\Users\mjeed1\AppData\Local\Temp\claude\c--Users-mjeed1-Desktop-WorkSpace\ad664777-f601-4a95-8115-ab743da207fa\scratchpad\pa_test\hello.py
+
+## Environments
+Python 3.12.10
+Pyarmor 9.2.5 (trial), 000000, non-profits
+Platform windows.x86_64
+Native windows.amd64
+Home C:\Users\mjeed1\.pyarmor
+

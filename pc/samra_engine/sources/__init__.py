@@ -1,0 +1,35 @@
+from .source import Source
+
+from .storytel import StorytelSource
+
+from ..exceptions import NoSourceFound
+import re
+from typing import Iterable, List, Type
+
+def find_compatible_source(url: str) -> Type[Source]:
+    """Finds the first source that supports the given url"""
+    sources = get_source_classes()
+    for source in sources:
+        for n, m in enumerate(source.match):
+            if not re.match(m, url) is None:
+                return source
+    raise NoSourceFound
+
+
+def get_source_classes() -> List[Type[Source]]:
+    """Returns a list of all available sources"""
+    return [
+        StorytelSource,
+    ]
+
+
+def get_source_names() -> Iterable[str]:
+    """
+    Returns the names of all sources available
+    There are sometimes multiple names for the same source
+    """
+    results: List[str] = []
+    for source in get_source_classes():
+        for source_name in source.names:
+            results.append(source_name)
+    return sorted(results, key=lambda x: x.lower())

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Samra" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Cold-start window background follows the system (DayNight via @color
+             night qualifier). MainActivity then overrides it from the saved
+             in-app theme choice before the first Compose frame, so there is no
+             white flash regardless of which mode the user picked. -->
+        <item name="android:windowBackground">@color/samra_window_bg</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>

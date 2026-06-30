@@ -1,0 +1,18 @@
+
+# Security: never commit signing material
+keystore.properties
+*.jks
+*.keystore
+local.properties
+
+# Build artifacts (R8 mapping.txt, intermediates, packaged APK/AAB)
+build/
+.gradle/
+*.apk
+*.aab
+captures/
+.cxx/
+
+# IDE
+.idea/
+*.iml

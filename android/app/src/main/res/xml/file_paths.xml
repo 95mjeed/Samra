@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- Scoped to exactly what the app shares: book files under Download/Samra and the
+         app-external Samra dir. The previous path="." entries (whole external storage)
+         were removed so a stray getUriForFile can never expose arbitrary files. -->
+    <external-files-path name="samra" path="Samra/" />
+    <external-path name="download_samra" path="Download/Samra/" />
+</paths>

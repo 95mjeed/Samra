@@ -1,0 +1,51 @@
+# ─── Secrets — NEVER commit ───
+**/keystore.properties
+**/*.jks
+**/*.keystore
+**/local.properties
+**/creds.json
+.samra/
+
+# ─── Build artifacts ───
+**/build/
+**/.gradle/
+**/__pycache__/
+**/*.pyc
+*.apk
+*.aab
+*.exe
+pc/dist/
+pc/build/
+android/captures/
+**/.cxx/
+
+# ─── Large / generated bundles ───
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+backups/
+
+# ─── Private de-attributed engine sources + anything tracing to the upstream repo ───
+engine_src_readable/
+original/
+docs/
+# Handoff / knowledge / review docs that reference the upstream project — origin stays private
+**/SESSION_HANDOFF.md
+**/SAMRA_FULL_CHANGELOG.md
+**/SECURITY_REVIEW.md
+**/DESIGN_CHANGES.md
+**/CLAUDE_KNOWLEDGE/
+android/README.md
+ios/README.md
+pc/README.md
+
+# ─── IDE / OS / venv ───
+.idea/
+*.iml
+.vscode/
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+_*.png

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#7C3AED</color>
+    <!-- Launch window background. DayNight: light here, dark in values-night.
+         Matches Compose LightColors.bg / DarkColors.bg so cold start shows no flash. -->
+    <color name="samra_window_bg">#FBF8F1</color>
+</resources>

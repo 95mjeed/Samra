@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TLS-only: no cleartext HTTP anywhere. Storytel and all provider APIs are HTTPS.
+     (Note: the Chaquopy/Python download engine uses its own OpenSSL/certifi trust store,
+     so this config governs the Android/Kotlin layer; it is defense-in-depth.) -->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

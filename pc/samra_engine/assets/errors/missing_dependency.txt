@@ -1,0 +1,1 @@
+[red]ERROR: {dependency} is required for samra_engine to run[/red]
